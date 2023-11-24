@@ -37,7 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
     'siteApp',
+    
+    
 ]
 
 MIDDLEWARE = [
@@ -68,6 +71,10 @@ TEMPLATES = [
     },
 ]
 
+REST_FRAMEWORK = {
+
+}
+
 WSGI_APPLICATION = 'newSite.wsgi.application'
 
 
@@ -76,8 +83,12 @@ WSGI_APPLICATION = 'newSite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'ufa_hack',
+        'USER': 'postgres',
+        'PASSWORD': '7877',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
@@ -104,7 +115,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ru'
 
 TIME_ZONE = 'UTC'
 
