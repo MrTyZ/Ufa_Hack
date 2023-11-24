@@ -1,6 +1,6 @@
 from django.db import models
 
-<<<<<<< HEAD
+
 class Subject(models.Model):
     title = models.CharField(max_length=255)
     description = models.CharField(max_length=500)
@@ -24,7 +24,7 @@ class Choice(models.Model):
     text = models.CharField(max_length=100) 
     question = models.ForeignKey('Question', on_delete=models.CASCADE, null=False)
     is_correct = models.BooleanField()
-=======
+
 class Test(models.Model):
     title=models.CharField(max_length=255)
->>>>>>> e9217f1bebee03a0951a0ad91eae454b6d07e14b
+
