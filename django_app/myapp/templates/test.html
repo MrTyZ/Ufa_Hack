@@ -2,39 +2,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tongue</title>
+<link rel="stylesheet" href="{% static 'css/style.css' %}" rel="stylesheet">
 </head>
 <body>
-    
-    <main>
-        <section>
-            <div class="questions">
-                <ul>
-                    {%for question in questions%}
-                        
-                            <li>
-                                <h2>{{question.text}} </h2>
-                                <form action="" method="post">{% csrf_token %}
-                                {%for choice in choices%}
-                                    
-                                    {% if choice.question == question%}
-                                    <input type="radio" name="test" value="{{choice.id}}"><lable>{{choice.text}}</lable>
+	<header>
+		<div class="header_name">Tongue</div>
+		<div class="header_link">
+			<a href="#anchorCourse" class="link">Выбрать курс</a>
+			<a href="#anchorLang" class="link">Выбрать язык</a>
+		</div>
+		<div class="header_reg">
+			<p class="log">Войти</p>
+			<p class="reg">Зарегистрироваться</p>
+		</div>
+	</header>
+<div class="wrapper">
+	<div class="main">
+		<div class="language_title">Английский язык</div>
+				
 
-                                    {%endif%}
-                                {% endfor %}
-                                <input type="submit" name="btnsubmit">
-                                </form>
-                            </li>
-                        
-                    {% endfor %}
-                    </ul>
-            </div>
-            
-    
-        </section>
-    </main>
+		<div class="line"><hr color="black" size="3px"/></div>
+
+		<div class="plateboxtest">
+			<div class="platetest">
+                {%for question in questions%}
+				<div class="plateQ">{{question.text}}</div>
+				<form class="plateForm" action="" method="post">{% csrf_token %}
+					{%for choice in choices%}
+
+					{% if choice.question == question%}
+					<input class = "radioinput" type="radio" name="test" value="{{choice.id}}"><lable class="radiotext">{{choice.text}}</lable><br>
+					{%endif%}
+					{% endfor %}
+				
+                    <input type="submit" name="btnsubmit" value="Ответить">
+					</form>
+			
+				
+			</div>
+            {%endfor%}
+		</div>
+
+		
+	</div>
+
+
+	<div class="line"><hr color="black" size="3px"/></div>
+
+	
+	<footer class="footer" id='anchorfooter'>
+		<div class="footer_text">@ProGrayMM, 2023</div>
+	</footer>
+</div>
+
 </body>
 </html>

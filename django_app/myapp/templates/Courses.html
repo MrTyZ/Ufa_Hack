@@ -1,34 +1,66 @@
+
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Title</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tongue</title>
+<link rel="stylesheet" href="{% static 'css/style.css' %}" rel="stylesheet">
 </head>
 <body>
-<header>
-<div class="header_logo">
-<h1>WD</h1>
-</div>
+	<header>
+		<div class="header_name">Tongue</div>
+		<div class="header_link">
+			<a href="#anchorCourse" class="link">Выбрать курс</a>
+			<a href="#anchorLang" class="link">Выбрать язык</a>
+		</div>
+		<div class="header_reg">
+			<p class="log">Войти</p>
+			<p class="reg">Зарегистрироваться</p>
+		</div>
+	</header>
+<div class="wrapper">
+	<div class="main">
+		<div class="language_about">
+			<div class="language_row">
+				<div class="language_title">Английский язык</div>
+				<div class="language_text">Англи́йский язык — язык англо-фризской подгруппы западной группы германской ветви индоевропейской языковой семьи. Английский язык — важнейший международный язык, что является следствием колониальной политики Британской империи в XIX и первой половине XX века, а также мирового влияния Соединённых Штатов Америки в XX—XXI веках. Является одним из наиболее распространённых языков в мире. Существует значительное разнообразие диалектов и говоров английского языка.</div>
+				</div>
+				<div class="language_c_pic">
+					<img src="Eng.png" width=100% height=100%/>
+				</div>
+				
+		</div>
 
-<div class="header_menu">
-<a class="menu_item" href="#intro">ГЛАВНАЯ</a>
-<a class="menu_item" href="#about_me">ОБ АВТОРЕ</a>
-<a class="menu_item" href="#my_projects">РАБОТЫ</a>
-<a class="menu_item" href="#process">ПРОЦЕСС</a>
-<a class="menu_item" href="#send">КОНТАКТЫ</a>
-</div>
+		<div class="line"><hr color="black" size="3px"/></div>
 
-</header>
+		<div class="textcours">Выберите нужный курс</div>
+		<div class="platebox" id='anchorCourse'>
+            {% for c in courses %}
+			<div class="plate">
+				<div class="plate_row">
+					<div class="plate_t">	
+						<div class="plate_title">{{c.title}}</div>
+						<div class="plate_text">{{c.description}}</div>
+					</div>
+					<div class="plate_btn"><a href="{%url 'course' c.id %}" class="link"><span>Начать курс</span></a></div>
+				</div>
+			</div>
+            {% endfor %}
+		</div>
+
+		<div class="line"><hr color="black" size="3px"/></div>
+
+	</div>
+
+	<div class="line"><hr color="black" size="3px"/></div>
+
+	
+	<footer class="footer" id='anchorfooter'>
+		<div class="footer_text">@ProGrayMM, 2023</div>
+	</footer>
+</div>
 
 </body>
-<ul>
-{% for c in courses %}
-<li>
-<h2> {{c.title}} </h2>
-<p>{{c.description}}</p>
-<p><a href="{%url 'course' c.id %}">Открыть курс</a></p>
-</li>
-{% endfor %}
-</ul>
-
 </html>

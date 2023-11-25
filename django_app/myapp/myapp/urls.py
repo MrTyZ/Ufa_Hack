@@ -16,30 +16,21 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include, re_path
-from shop.views import  items_app, SubjectAPIList, subj, index, test, courses,RegisterUser
+from shop.views import  items_app, SubjectAPIList, index, test, courses, RegisterUser, LoginUser
 from rest_framework import routers
 
 
 
-"""router = routers.SimpleRouter()
-router.register(r'shop', ItemViewSet, basename='subject')"""
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('register/', RegisterUser.as_view()),
-    path('index/', index),
-    path('temp/', test),
+    path('login/', LoginUser.as_view()),
+    path('index/', index, name='index'),
     path('items_page/', items_app),
     path('index/courses/<int:subject_id>/', courses, name='courses'),
     path('courses/course/<int:course_id>/', test, name='course'),
-    #path('api/v1/', include(router.urls)),
-    #path('api/v1/shop', ItemViewSet.as_view({'get': 'list'}),
-    #path('api/v1/shop/<int:pk>/', ItemViewSet.as_view({'put': 'update'})),
-    #path('api/v1/shop/', ItemAPIList.as_view()),
-    #path('api/v1/shop/<int:pk>/', ItemAPIUpdate.as_view()),
-    #path('api/v1/shopdelete/<int:pk>/', ItemAPIDestroy.as_view()),
-    #path('api/v1/auth/', include('djoser.urls')),
-    #re_path(r'^auth/', include('djoser.urls.authtoken')),
 ]
+
 
 

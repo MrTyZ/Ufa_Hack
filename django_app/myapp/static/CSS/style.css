@@ -1,8 +1,17 @@
-body{
-	margin: 0;
+html{
+
+	height: 100%;
 	background-image: url(back.jpg);
 	background-repeat: no-repeat;
-	background-size: cover;
+}
+body{
+	margin: 0;
+	height: 100%;
+}
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
 }
 hr{
 margin: 0;
@@ -10,15 +19,16 @@ margin: 0;
 .main{
 	background: linear-gradient(180deg, rgba(255, 255, 255, .7), rgba(0, 0, 0, .5)); 
 	background-size: cover;
-	height: 100%;
+	min-height: 100%;
 	margin: 0;
 	padding: 0;
+	flex-grow: 1;
+	flex: 1 0 auto;
 }
 header{
 display: flex;
 background-color: black;
 padding: 10px;
-flex: 1 1 auto;
 justify-content: space-between;
 color: white;
 }
@@ -111,8 +121,8 @@ animation-duration: 3s; /* длительность анимации в 1 сек
 	background-color: rgba(0,0,0,.3);
 }
 .language_pic{
-	height: 300px;
-	width: 300px;
+	height: 350px;
+	width: 350px;
 	margin: 15px ;
 
 opacity: 0;
@@ -167,9 +177,227 @@ margin: auto;
 	background-color: rgba(0, 0, 0, .7);
 	height: 30px;
 	align-items: center;
+	flex: 0 0 auto;
 }
 .footer_text{
 	text-align: center;
 	vertical-align: middle;
 	 font-size: 24px;
+}
+.language_about{	
+		display: flex;
+		margin-bottom: 25px;
+
+}
+.language_row {
+	padding: 2% 0 0 10%;
+	width: 70%;
+}
+.language_title{
+	text-shadow: 0 1px 0 #000,
+               0 6px 1px rgba(0,0,0,.1),
+               0 0 5px rgba(0,0,0,.1),
+               0 1px 3px rgba(0,0,0,.3),
+               0 3px 5px rgba(0,0,0,.2);
+font-size: 48px;
+text-align: center;
+font-family: algerian, Courier, arial;
+margin: auto;
+margin-bottom: 25px;
+opacity: 0;
+
+animation: fadeIn ease-in 1; /* добавляем анимацию fadeIn */
+animation-fill-mode: forwards; /* будет видимым после завершения анимации */
+animation-duration: 3s; /* длительность анимации в 1 секунду */}
+.language_text{
+	text-shadow: 0 1px 0 #000,
+               0 6px 1px rgba(0,0,0,.1),
+               0 0 5px rgba(0,0,0,.1),
+               0 1px 3px rgba(0,0,0,.3),
+               0 3px 5px rgba(0,0,0,.2);
+font-size: 24px;
+font-family: algerian, Courier, arial;
+margin: auto;
+opacity: 0;
+
+animation: fadeIn ease-in 1; /* добавляем анимацию fadeIn */
+animation-fill-mode: forwards; /* будет видимым после завершения анимации */
+animation-duration: 3s; /* длительность анимации в 1 секунду */}
+.language_c_pic {
+	width: 300px;
+	height: 300px;
+	margin: auto;
+	padding: 25px;
+}
+.textcours{
+	text-shadow: 0 1px 0 #000,
+               0 6px 1px rgba(0,0,0,.1),
+               0 0 5px rgba(0,0,0,.1),
+               0 1px 3px rgba(0,0,0,.3),
+               0 3px 5px rgba(0,0,0,.2);
+font-size: 36px;
+font-family: algerian, Courier, arial;
+margin: auto;
+opacity: 0;
+padding: 2% 0 0 10%;
+animation: fadeIn ease-in 1; /* добавляем анимацию fadeIn */
+animation-fill-mode: forwards; /* будет видимым после завершения анимации */
+animation-duration: 3s; /* длительность анимации в 1 секунду */
+}
+
+.platebox {
+	margin:0 10% 0 10%;
+  width:70%;
+flex: 1 1 auto;}
+.plate {
+	margin: 15px;
+	border: 2px solid;
+	border-radius: 15px;
+	height: 100px;
+}
+.plate_row {
+	display: flex;
+	height: 100%;
+}
+.plate_t {width: 90%;}
+.plate_title {	text-shadow: 0 1px 0 #000,
+               0 6px 1px rgba(0,0,0,.1),
+               0 0 5px rgba(0,0,0,.1),
+               0 1px 3px rgba(0,0,0,.3),
+               0 3px 5px rgba(0,0,0,.2);
+font-size: 36px;
+font-family: algerian, Courier, arial;
+margin: auto;
+margin-left: 2%;
+opacity: 0;
+animation: fadeIn ease-in 1; /* добавляем анимацию fadeIn */
+animation-fill-mode: forwards; /* будет видимым после завершения анимации */
+animation-duration: 3s; /* длительность анимации в 1 секунду */}
+.plate_text {	text-shadow: 0 1px 0 #000,
+               0 6px 1px rgba(0,0,0,.1),
+               0 0 5px rgba(0,0,0,.1),
+               0 1px 3px rgba(0,0,0,.3),
+               0 3px 5px rgba(0,0,0,.2);
+font-size: 24px;
+font-family: algerian, Courier, arial;
+margin: auto;
+margin-left: 2%;
+opacity: 0;
+animation: fadeIn ease-in 1; /* добавляем анимацию fadeIn */
+animation-fill-mode: forwards; /* будет видимым после завершения анимации */
+animation-duration: 3s; /* длительность анимации в 1 секунду */
+word-break: break-all;}
+.plate_btn {
+	margin: auto;
+	margin-right: 2%;
+}
+a.link {
+  display: block;
+  width: 200px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 18px;
+  font-family: sans-serif;
+  text-decoration: none;
+  color: #fff;
+  border: 2px solid #333;
+  letter-spacing: 2px;
+  text-align: center;
+  position: relative;
+  transition: all .35s;
+}
+
+a.link  span{
+  position: relative;
+  z-index: 2;
+}
+
+a.link:after{
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: #ff003b;
+  transition: all .35s;
+}
+
+a.link:hover:after{
+  width: 100%;
+}
+.btnexit{
+	padding: 2% 0 0 10%;
+}
+.platetest {
+	border: 2px solid black;
+	border-radius: 30px;
+	background-color: rgba(0,0,0,.3);
+	height: 500px;
+	margin-top:50px;
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+}
+.plateQ {
+	text-align: center;
+		text-shadow: 0 1px 0 #000,
+               0 6px 1px rgba(0,0,0,.1),
+               0 0 5px rgba(0,0,0,.1),
+               0 1px 3px rgba(0,0,0,.3),
+               0 3px 5px rgba(0,0,0,.2);
+font-size: 36px;
+font-family: algerian, Courier, arial;
+margin: auto;
+opacity: 0;
+animation: fadeIn ease-in 1; /* добавляем анимацию fadeIn */
+animation-fill-mode: forwards; /* будет видимым после завершения анимации */
+animation-duration: 3s; /* длительность анимации в 1 секунду */
+}
+.plateA {
+	text-align: center;
+		text-shadow: 0 1px 0 #000,
+               0 6px 1px rgba(0,0,0,.1),
+               0 0 5px rgba(0,0,0,.1),
+               0 1px 3px rgba(0,0,0,.3),
+               0 3px 5px rgba(0,0,0,.2);
+font-size: 24px;
+font-family: algerian, Courier, arial;
+margin: auto;
+opacity: 0;
+animation: fadeIn ease-in 1; /* добавляем анимацию fadeIn */
+animation-fill-mode: forwards; /* будет видимым после завершения анимации */
+animation-duration: 3s; /* длительность анимации в 1 секунду */
+}
+.plateForm{
+	margin: auto;
+	margin-top: 50px;
+	text-align: center;
+}
+.plateA_btn{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+.plate__btn{
+	margin: auto;
+}
+.radioinput{
+	margin: auto;
+}
+.radiotext{
+		text-align: center;
+		text-shadow: 0 1px 0 #000,
+               0 6px 1px rgba(0,0,0,.1),
+               0 0 5px rgba(0,0,0,.1),
+               0 1px 3px rgba(0,0,0,.3),
+               0 3px 5px rgba(0,0,0,.2);
+font-size: 24px;
+font-family: algerian, Courier, arial;
+margin: auto;
+opacity: 0;
+animation: fadeIn ease-in 1; /* добавляем анимацию fadeIn */
+animation-fill-mode: forwards; /* будет видимым после завершения анимации */
+animation-duration: 3s; /* длительность анимации в 1 секунду */
 }

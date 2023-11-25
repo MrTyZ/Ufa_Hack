@@ -1,5 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
+from django.conf import settings
+User=get_user_model()
 
 class Subject(models.Model):
     title = models.CharField(max_length=255)
@@ -39,4 +42,13 @@ class Choice(models.Model):
 
     def __str__(self) -> str:
         return self.text
+
+
+
+class UserProgress(models.Model):
+
+    course = models.ForeignKey('Course', on_delete=models.PROTECT, null=False)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.PROTECT, null=False)
+    user = models.ForeignKey(User, on_delete=models.PROTECT, null=False)
+    num = models.IntegerField()
 
