@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tongue</title>
+<link rel="stylesheet" href="{% static 'css/style.css' %}" rel="stylesheet">
+</head>
+<body>
+	<header>
+		<div class="header_name">Tongue</div>
+		<div class="header_link">
+			<a href="#anchorCourse" class="link">Выбрать курс</a>
+			<a href="#anchorLang" class="link">Узнать о языках</a>
+			<a href="#anchorfooter" class="link">О нас</a>
+		</div>
+		<div class="header_reg">
+			<p class="log">Войти</p>
+			<p class="reg">Зарегистрироваться</p>
+		</div>
+	</header>
+
+	<div class="main">
+		<div class="about">
+			<div class="about_row">
+				<div class="about_pic">
+					<img src="book.png" width=100% height=100%/>
+				</div>
+				<div class="about_text">Tongue - это онлайн-платформа для изучения языков, которая предлагает уроки сделанные при помощи носителей языка. Изучение иностранных языков имеет множество преимуществ. Во-первых, это помогает расширить кругозор и понимание других культур. Знание иностранных языков также улучшает коммуникацию и общение с людьми из разных стран, что важно как в повседневной жизни, так и в бизнесе. Кроме того, это повышает шансы на трудоустройство и карьерный рост. Умение говорить на нескольких языках облегчает путешествия и позволяет лучше погрузиться в местную атмосферу.</div>
+			</div>
+		</div>
+
+		<div class="line"><hr color="black" size="3px"/></div>
+
+		<div class="box" id='anchorCourse'>
+            {% for subject in subjects %}
+            <a href="{%url 'courses' subject.id %}">
+                <div class="language_pic">
+                    <h1>
+                        {{subject.title}}
+                    </h1>
+                </div>
+            </a>
+            {% endfor %}
+		</div>
+
+		<div class="line"><hr color="black" size="3px"/></div>
+
+		<div class="languages" id='anchorLang'>
+			<div class="languages_line">
+				<div class="languages_line_text">Англи́йский язык — язык англо-фризской подгруппы западной группы германской ветви индоевропейской языковой семьи. Английский язык — важнейший международный язык, что является следствием колониальной политики Британской империи в XIX и первой половине XX века, а также мирового влияния Соединённых Штатов Америки в XX—XXI веках. Является одним из наиболее распространённых языков в мире. Существует значительное разнообразие диалектов и говоров английского языка.</div>
+				<div class="languages_line_pic"><img src="Eng.png" class="languages_line__pic"/></div>
+			</div>
+			<div class="languages_line">
+				<div class="languages_line_text">Ара́бский язы́к — язык семитской семьи афразийской макросемьи языков. Число говорящих на арабском языке и его разновидностях составляет около 310 миллионов (родной язык), и ещё около 270 миллионов человек использует арабский в качестве второго языка. Классический арабский — язык Корана — ограниченно используется в религиозных целях приверженцами ислама по всему миру</div>
+				<div class="languages_line_pic"><img src="Arab.png" class="languages_line__pic"/></div>
+			</div>
+			<div class="languages_line">
+				<div class="languages_line_text">Ру́сский язы́к — язык восточнославянской группы славянской ветви индоевропейской языковой семьи, национальный язык русского народа. Является одним из наиболее распространённых языков мира — восьмым среди всех языков мира по общей численности говорящих и седьмым по численности владеющих им как родным (2022). Русский является также самым распространённым славянским языком и самым распространённым языком в Европе — географически и по числу носителей языка как родного.</div>
+				<div class="languages_line_pic"><img src="Russian.png" class="languages_line__pic"/></div>
+			</div>
+		</div>
+
+		<div class="line"><hr color="black" size="3px"/></div>
+
+	</div>
+
+	<footer class="footer" id='anchorfooter'>
+		<div class="footer_text">@ProGrayMM, 2023</div>
+	</footer>
+
+<script src="{% static 'Scripts/ShowText.js' %}"></script>
+</body>
+</html>

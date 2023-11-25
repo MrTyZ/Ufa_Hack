@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" rel="stylesheet">
+</head>
+<body>
+    
+    <main>
+        <section>
+            <div class="questions">
+                <ul>
+                    {%for question in questions%}
+                        
+                            <li>
+                                <h2>{{question.text}} </h2>
+                                <form action="" method="post">{% csrf_token %}
+                                {%for choice in choices%}
+                                    
+                                    {% if choice.question == question%}
+                                    <input type="radio" name="test" value="{{choice.id}}"><lable>{{choice.text}}</lable>
+
+                                    {%endif%}
+                                {% endfor %}
+                                <input type="submit" name="btnsubmit">
+                                </form>
+                            </li>
+                        
+                    {% endfor %}
+                    </ul>
+            </div>
+            
+    
+        </section>
+    </main>
+</body>
+</html>

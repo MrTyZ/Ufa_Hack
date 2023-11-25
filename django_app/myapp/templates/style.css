@@ -1,0 +1,15 @@
+.subject_title{
+    font-size: 220px;
+    text-align: center;
+    color: red;
+}
+.subject_list{
+    padding: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
+.intro_text{
+    width: 100%;
+    justify-content: center;
+}

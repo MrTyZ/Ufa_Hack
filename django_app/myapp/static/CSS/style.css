@@ -1,0 +1,175 @@
+body{
+	margin: 0;
+	background-image: url(back.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+hr{
+margin: 0;
+}
+.main{
+	background: linear-gradient(180deg, rgba(255, 255, 255, .7), rgba(0, 0, 0, .5)); 
+	background-size: cover;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+header{
+display: flex;
+background-color: black;
+padding: 10px;
+flex: 1 1 auto;
+justify-content: space-between;
+color: white;
+}
+
+.header_name {
+  font-size: 50px;
+  font-weight: 600;
+  background-image: linear-gradient(to left, #553c9a, #b393d3);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  margin-left: 5%;
+  margin-top: auto;
+	margin-bottom: auto;
+}
+.header_link {
+	padding-left: 10%;
+	margin-top: auto;
+	margin-bottom: auto;
+	display: flex;
+}
+.header_reg {
+	display: flex;
+	margin: auto;
+	margin-right: 2%;
+}
+.reg{
+	padding-left: 5%;
+}
+.link{
+	margin: 10px;
+	color: white;
+}
+
+.main {}
+.about {
+	margin-bottom: 70px;
+}
+.about_row {
+	display: flex;
+	padding-left: 20%;
+	padding: 3% 0 0 10%;
+}
+.about_pic {
+	width: 50%;
+
+	opacity: 0;
+	animation: fadeIn ease-in 1; /* добавляем анимацию fadeIn */
+animation-fill-mode: forwards; /* будет видимым после завершения анимации */
+animation-duration: 3s;
+}
+.about_text {
+	width: 70%;
+	text-shadow: 0 1px 0 #000,
+               0 6px 1px rgba(0,0,0,.1),
+               0 0 5px rgba(0,0,0,.1),
+               0 1px 3px rgba(0,0,0,.3),
+               0 3px 5px rgba(0,0,0,.2);
+font-size: 24px;
+font-family: algerian, Courier, arial;
+text-align: center;
+margin: auto;
+margin-left: 50px;
+opacity: 0;
+
+animation: fadeIn ease-in 1; /* добавляем анимацию fadeIn */
+animation-fill-mode: forwards; /* будет видимым после завершения анимации */
+animation-duration: 3s; /* длительность анимации в 1 секунду */
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+ }
+.box{
+	display: flex;
+	flex-wrap: wrap;
+	margin:0 15% 0 15%;
+  width:70%;
+}
+.language{
+	height: 300px;
+	width: 300px;
+	margin: 15px ;
+	border: 2px solid black;
+	border-radius: 30px;
+	background-color: rgba(0,0,0,.3);
+}
+.language_pic{
+	height: 300px;
+	width: 300px;
+	margin: 15px ;
+
+opacity: 0;
+animation: fadeIn ease-in 1; /* добавляем анимацию fadeIn */
+animation-fill-mode: forwards; /* будет видимым после завершения анимации */
+animation-duration: 3s;
+}
+.language__pic{
+	max-width: 100%;
+	height: auto; 
+	width: auto;
+	display: block;
+  margin: 0 auto;
+}
+.languages{
+	padding:50px;
+}
+.languages_line{
+	display: flex;
+	padding: 50px 10% 0 10%;
+
+	opacity: 0;
+}
+.languages_line.element-show{
+	opacity: 1;
+	transition: opacity 1s;
+}
+.languages_line_text{
+	text-shadow: 0 1px 0 #000,
+               0 6px 1px rgba(0,0,0,.1),
+               0 0 5px rgba(0,0,0,.1),
+               0 1px 3px rgba(0,0,0,.3),
+               0 3px 5px rgba(0,0,0,.2);
+font-size: 24px;
+font-family: algerian, Courier, arial;
+text-align: center;
+margin: auto;
+margin-right: 100px;
+}
+.languages_line_pic{
+margin: auto;
+}
+.languages_line__pic{
+	height: 250px; 
+	width: 250px;
+}
+.line{
+	margin: 0;
+	padding: 0;
+}
+.footer{
+	background-color: rgba(0, 0, 0, .7);
+	height: 30px;
+	align-items: center;
+}
+.footer_text{
+	text-align: center;
+	vertical-align: middle;
+	 font-size: 24px;
+}
