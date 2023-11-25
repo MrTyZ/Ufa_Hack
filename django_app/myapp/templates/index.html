@@ -11,9 +11,9 @@
 	<header>
 		<div class="header_name">Tongue</div>
 		<div class="header_link">
-			<a href="#anchorCourse" class="link">Выбрать курс</a>
-			<a href="#anchorLang" class="link">Узнать о языках</a>
-			<a href="#anchorfooter" class="link">О нас</a>
+			<a href="#anchorCourse" class="link"><span>Выбрать курс</span></a>
+			<a href="#anchorLang" class="link"><span>Узнать о языках</span></a>
+			<a href="#anchorfooter" class="link"><span>О нас</span></a>
 		</div>
 		<div class="header_reg">
 			<p class="log">Войти</p>
@@ -25,7 +25,7 @@
 		<div class="about">
 			<div class="about_row">
 				<div class="about_pic">
-					<img src="book.png" width=100% height=100%/>
+					<img src="{% static 'Pic/book.png' %}" width=100% height=100%/>
 				</div>
 				<div class="about_text">Tongue - это онлайн-платформа для изучения языков, которая предлагает уроки сделанные при помощи носителей языка. Изучение иностранных языков имеет множество преимуществ. Во-первых, это помогает расширить кругозор и понимание других культур. Знание иностранных языков также улучшает коммуникацию и общение с людьми из разных стран, что важно как в повседневной жизни, так и в бизнесе. Кроме того, это повышает шансы на трудоустройство и карьерный рост. Умение говорить на нескольких языках облегчает путешествия и позволяет лучше погрузиться в местную атмосферу.</div>
 			</div>
@@ -38,7 +38,7 @@
             <a href="{%url 'courses' subject.id %}">
                 <div class="language_pic">
                     <h1>
-                        {{subject.title}}
+                        <img src="{% static 'Pic/course{%subject.id%}.png' %}"> {{subject.title}}
                     </h1>
                 </div>
             </a>

@@ -1,7 +1,6 @@
 html{
 
 	height: 100%;
-	background-image: url(back.jpg);
 	background-repeat: no-repeat;
 }
 body{
@@ -349,6 +348,7 @@ a.link:hover:after{
 font-size: 36px;
 font-family: algerian, Courier, arial;
 margin: auto;
+margin-bottom: 25px;
 opacity: 0;
 animation: fadeIn ease-in 1; /* добавляем анимацию fadeIn */
 animation-fill-mode: forwards; /* будет видимым после завершения анимации */
@@ -372,7 +372,7 @@ animation-duration: 3s; /* длительность анимации в 1 сек
 .plateForm{
 	margin: auto;
 	margin-top: 50px;
-	text-align: center;
+	text-align: left;
 }
 .plateA_btn{
     margin: auto;
@@ -385,15 +385,16 @@ animation-duration: 3s; /* длительность анимации в 1 сек
 }
 .radioinput{
 	margin: auto;
+	margin-bottom: 20px;
 }
 .radiotext{
-		text-align: center;
+		text-align: left;
 		text-shadow: 0 1px 0 #000,
                0 6px 1px rgba(0,0,0,.1),
                0 0 5px rgba(0,0,0,.1),
                0 1px 3px rgba(0,0,0,.3),
                0 3px 5px rgba(0,0,0,.2);
-font-size: 24px;
+font-size: 18px;
 font-family: algerian, Courier, arial;
 margin: auto;
 opacity: 0;

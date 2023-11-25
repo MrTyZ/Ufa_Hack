@@ -17,6 +17,7 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.urls import reverse_lazy
 from .forms import RegisterUserForm
 from django.contrib.auth.views import LoginView
+from django.contrib.auth.models import User
 
 
 def index(request): 
@@ -67,7 +68,8 @@ def test(request,course_id):
     if question_num >= questions_list.count():
         question_num = 0
         request.session['q'] = 0
-        #UserProgress.objects.create(course=Course.objects.get(pk=course_id), user=User.request.user.id, num=5)
+        UserProgress.objects.create(course=Course.objects.get(pk=course_id),
+         user=User.objects.get(pk=request.user.id), num=5)
         return render(request, "results.html", {"questions": Question.objects.all(), "choices": Choice.objects.all(), "correct_list": request.session['correct_list']} )
 
     quest_lst = questions_list[ question_num: question_num+1]

@@ -7,7 +7,7 @@ User=get_user_model()
 class Subject(models.Model):
     title = models.CharField(max_length=255)
     description = models.CharField(max_length=500)
-
+    image = models.ImageField()
     def __str__(self) -> str:
         return self.title
 
@@ -48,7 +48,11 @@ class Choice(models.Model):
 class UserProgress(models.Model):
 
     course = models.ForeignKey('Course', on_delete=models.PROTECT, null=False)
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.PROTECT, null=False)
-    user = models.ForeignKey(User, on_delete=models.PROTECT, null=False)
+    #user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.PROTECT, null=False)
+    #user = models.OneToOneField('auth.User', on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     num = models.IntegerField()
 
+
+    def __str__(self) -> str:
+        return self.course.title
